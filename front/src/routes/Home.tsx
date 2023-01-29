@@ -9,7 +9,6 @@ export default function Home() {
             columnGap={4}
             rowGap={8}
             gap={10}
-            // templateColumns={"repeat(5, 1fr)"}
             templateColumns={{
                 sm: "1fr",
                 md: "1fr 1fr",
