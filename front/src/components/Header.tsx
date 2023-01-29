@@ -17,7 +17,6 @@ export default function Header() {
             py={5}
             px={40}
             borderBottomWidth={1}
-            alignItems="center"
             direction={{
                 sm: "column",
                 md: "row",
@@ -26,6 +25,7 @@ export default function Header() {
                 sm:3,
                 md:0,
             }}
+
         >
             <Box color={logoColor}>
                 <Link to={"/"}>
