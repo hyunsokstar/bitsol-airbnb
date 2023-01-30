@@ -2,8 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "./components/Root";
 import Home from "./routes/Home";
 import NotFound from "./routes/NotFound";
-// import Users from "./routes/Users";
 
+//
+import RoomDetail from "./routes/RoomDetail";
 
 const router = createBrowserRouter([
     {
@@ -12,14 +13,14 @@ const router = createBrowserRouter([
         errorElement: <NotFound />,
         children: [
             {
-                path: "",   
-                element: <Home />
+                path: "",
+                element: <Home />,
             },
-            // {
-            //     path: "/users", 
-            //     element: <Users />
-            // },
-        ]
+            {
+                path: "rooms/:roomPk",
+                element: <RoomDetail />,
+            },
+        ],
     },
 ]);
 

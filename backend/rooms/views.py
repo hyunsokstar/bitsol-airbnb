@@ -138,7 +138,6 @@ class RoomDetail(APIView):
             raise NotFound
 
     def get(self, request, pk):
-                        
         room = self.get_object(pk)
         serializer = RoomDetailSerializer(room, context={"request":request})             
         return Response(serializer.data)

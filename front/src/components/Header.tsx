@@ -3,6 +3,7 @@ import { Box, Button, HStack, Stack, IconButton, LightMode, useColorMode, useCol
 import { Link } from "react-router-dom";
 import LoginModal from "./LoginModal";
 import SignUpModal from "./SignUpModal";
+import { useState } from "react";
 
 export default function Header() {
     const { isOpen: isLoginOpen, onClose: onLoginClose, onOpen: onLoginOpen } = useDisclosure();
@@ -10,8 +11,9 @@ export default function Header() {
     const { toggleColorMode } = useColorMode();
     const logoColor = useColorModeValue("red.500", "red.200");
     const Icon = useColorModeValue(FaMoon, FaSun);
+
+
     return (
-        // <HStack
         <Stack
             justifyContent={"space-between"}
             py={5}
