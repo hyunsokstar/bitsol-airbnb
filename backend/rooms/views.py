@@ -138,14 +138,17 @@ class RoomDetail(APIView):
             raise NotFound
 
     def get(self, request, pk):
+        print("디테일 페이지 요청 확인 (백엔드) !")
+        print(pk, type(pk))
         room = self.get_object(pk)
+        print("room : ", room)
         serializer = RoomDetailSerializer(room, context={"request":request})             
+        print("serializer.data: ", serializer.data)
         return Response(serializer.data)
     
     def delete(self, request, pk):
         room = self.get_object(pk)
-        # if not request.user.is_authenticated:
-            # raise NotAuthenticated
+
         if room.owner != request.user:
             raise PermissionDenied
         room.delete()
