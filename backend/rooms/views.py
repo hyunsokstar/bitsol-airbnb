@@ -1,3 +1,5 @@
+import time
+
 from django.shortcuts import render
 from rest_framework.views import APIView
 
@@ -138,6 +140,7 @@ class RoomDetail(APIView):
             raise NotFound
 
     def get(self, request, pk):
+        # time.sleep(5)
         print("디테일 페이지 요청 확인 (백엔드) !")
         print(pk, type(pk))
         room = self.get_object(pk)

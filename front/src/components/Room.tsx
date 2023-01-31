@@ -1,7 +1,5 @@
 import { FaRegHeart, FaStar } from "react-icons/fa";
 import { Box, Button, Grid, HStack, Image, Text, useColorModeValue, VStack } from "@chakra-ui/react";
-
-//
 import { Link } from "react-router-dom";
 
 interface IRoomProps {
@@ -13,6 +11,7 @@ interface IRoomProps {
     country: string;
     price: number;
 }
+
 
 export default function Room({ pk, imageUrl, name, rating, city, country, price }: IRoomProps) {
     const gray = useColorModeValue("gray.600", "gray.300");
