@@ -19,10 +19,12 @@ import {
     MenuList,
     MenuItem,
     useToast,
+    Select,
 } from "@chakra-ui/react";
 import useUser from "../lib/useUser";
 
 import { logOut } from "../api";
+import HeadMenus from "./HeadMenus";
 
 export default function Header() {
     const { isOpen: isLoginOpen, onClose: onLoginClose, onOpen: onLoginOpen } = useDisclosure();
@@ -67,12 +69,21 @@ export default function Header() {
             }}
         >
             <Box color={logoColor}>
-                <Link to={"/"}>
+                {/* <Link to={"/"}>
                     <FaAirbnb size={"48"} />
-                </Link>
+                </Link> */}
+
+                <img src="https://www.scgs.co.kr/img/logo.png" alt="" />
+
             </Box>
             <HStack spacing={2}>
+
+                <HeadMenus />
+                
+
+
                 <IconButton onClick={toggleColorMode} variant={"ghost"} aria-label="Toggle dark mode" icon={<Icon />} />
+
                 {!userLoading ? (
                     !isLoggedIn ? (
                         <>
