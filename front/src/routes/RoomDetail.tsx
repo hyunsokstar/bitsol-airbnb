@@ -23,13 +23,29 @@ export default function RoomDetail() {
                 <Heading>{data?.name}</Heading>
             </Skeleton>{" "}
             <Grid gap={2} height="60vh" templateRows={"repeat(2, 1fr)"} templateColumns={"repeat(4, 1fr)"} mt={8} rounded="xl" overflow={"hidden"}>
-                {[0, 1, 2, 3, 4].map((index) => (
-                    <GridItem colSpan={index === 0 ? 2 : 1} rowSpan={index === 0 ? 2 : 1} overflow={"hidden"} key={index}>
-                        <Skeleton isLoaded={!isLoading} h="100%" w="100%">
-                            <Image w="100%" h="100%" objectFit={"cover"} src={data?.photos[index].file} />
-                        </Skeleton>
-                    </GridItem>
-                ))}
+                {[0, 1, 2, 3, 4].map((index) =>{
+                    if(data?.photos[index]?.file !== undefined){
+                        return (
+                            (
+                                <GridItem colSpan={index === 0 ? 2 : 1} rowSpan={index === 0 ? 2 : 1} overflow={"hidden"} key={index}>
+                                    <Skeleton isLoaded={!isLoading} h="100%" w="100%">
+                                        <Image w="100%" h="100%" objectFit={"cover"} src={data?.photos[index]?.file} alt="" />
+                                    </Skeleton>
+                                </GridItem>
+                            )
+                        )
+                    } else {
+                        return (
+                            (
+                                <GridItem colSpan={index === 0 ? 2 : 1} rowSpan={index === 0 ? 2 : 1} overflow={"hidden"} key={index}>
+                                    <Skeleton isLoaded={!isLoading} h="100%" w="100%">
+                                        <Image w="100%" h="100%" objectFit={"cover"} src="https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg" alt="" />
+                                    </Skeleton>
+                                </GridItem>
+                            )
+                        )
+                    }
+                } )}
             </Grid>
             <HStack width={"40%"} justifyContent={"space-between"} mt={10}>
                 <VStack alignItems={"flex-start"}>

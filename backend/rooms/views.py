@@ -81,6 +81,8 @@ class Rooms(APIView):
     permission_classes = [IsAuthenticatedOrReadOnly]
     
     def get(self, request):
+        print("room list 출력 확인")
+        # time.sleep(2)
         all_rooms = Room.objects.all()
         serializer = RoomListSerializer(all_rooms, many=True, context={"request": request})        
         return Response(serializer.data)
@@ -140,7 +142,7 @@ class RoomDetail(APIView):
             raise NotFound
 
     def get(self, request, pk):
-        # time.sleep(5)
+        # time.sleep(2)
         print("디테일 페이지 요청 확인 (백엔드) !")
         print(pk, type(pk))
         room = self.get_object(pk)
