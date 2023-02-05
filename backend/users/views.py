@@ -5,7 +5,6 @@ from . import serializers
 from rest_framework.exceptions import ParseError, NotFound
 from users.models import User
 from rest_framework import status
-
 from django.contrib.auth import authenticate, login, logout
 
 from django.conf import settings
@@ -103,6 +102,7 @@ class LogIn(APIView):
 
 
 class LogOut(APIView):
+
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
