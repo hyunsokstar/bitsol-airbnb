@@ -145,7 +145,6 @@ function BuildingManagement({ }: Props): ReactElement {
                                     asdfasdfa
                                 </GridItem>
                             </Grid>
-
                         </TabPanel>
                     </TabPanels>
                 </Tabs>
