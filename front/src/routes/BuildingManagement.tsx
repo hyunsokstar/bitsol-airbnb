@@ -8,6 +8,7 @@ import { getRooms } from "../api";
 import Room from "../components/Room";
 import RoomSkeleton from "../components/RoomSkeleton";
 
+import { Tabs, TabList, TabPanels, Tab, TabPanel, Image, Stack } from '@chakra-ui/react'
 
 interface Props {
 
@@ -108,49 +109,115 @@ function BuildingManagement({ }: Props): ReactElement {
                     연락처 : 02)3660-8343 / kimyk@seoulgas.co.kr
                 </h4>
 
+                <br /><br />
+
+                <Tabs variant='soft-rounded' colorScheme='green'>
+                    <TabList>
+                        <Tab>부동산자산관리</Tab>
+                        <Tab>시설관리</Tab>
+                        <Tab>보안관리</Tab>
+                        <Tab>미화관리</Tab>
+                        <Tab>견적문의</Tab>
+                    </TabList>
+                    <TabPanels>
+                        <TabPanel>
+                            <Stack direction='row'>
+                                {/* <Image boxSize='200px' src='https://bit.ly/dan-abramov' alt='Dan Abramov' /> */}
+                                <GridItem w='100%' bg='gray.200' >
+                                        <Box>
+                                            <Image boxSize='200px' src='https://www.scgs.co.kr/images/snn/images/sub/service01.jpg' alt='Dan Abramov' />
+                                        </Box>
+                                    </GridItem>
+                                    <GridItem w='100%' bg='gray.200' >
+                                        부동산자산관리
+
+                                        타 업체와는 차별화된 오랜 기간 운영관리의 경험과 경력으로 부동산의 cash flow를
+                                        증가시키고, market risk 와 hard의 risk를 총괄적으로 통제하여 중장기적으로 고객의
+                                        자산가치를 높이고 이용객의 편의를 극대화 하는데 목표를 두고있습니다.
+                                        운영관리
+                                        - 임대/임차 서비스
+                                        - 부동산 매입매각
+                                        - 부동산 투자자문
+                                        - 운영 / 임대 / 빌딩 관리 보고서
+                                        - 총무 & 사무지원
+                                    </GridItem>
+
+
+                            </Stack>
+                        </TabPanel>
+                        <TabPanel>
+                            <Stack direction='row'>
+                                <Grid templateColumns={"1fr 2fr"} gap={6}>
+                                    <GridItem w='100%' bg='gray.200' >
+                                        <Box>
+                                            <Image boxSize='200px' src='https://sm.askmen.com/askmen_in/article/f/facebook-p/facebook-profile-picture-affects-chances-of-gettin_fr3n.jpg' alt='Dan Abramov' />
+                                        </Box>
+                                    </GridItem>
+                                    <GridItem w='100%' bg='gray.200' >
+                                        부동산자산관리
+
+                                        타 업체와는 차별화된 오랜 기간 운영관리의 경험과 경력으로 부동산의 cash flow를
+                                        증가시키고, market risk 와 hard의 risk를 총괄적으로 통제하여 중장기적으로 고객의
+                                        자산가치를 높이고 이용객의 편의를 극대화 하는데 목표를 두고있습니다.
+                                        운영관리
+                                        - 임대/임차 서비스
+                                        - 부동산 매입매각
+                                        - 부동산 투자자문
+                                        - 운영 / 임대 / 빌딩 관리 보고서
+                                        - 총무 & 사무지원
+                                    </GridItem>
+
+                                </Grid>
+                            </Stack>
+                        </TabPanel>
+                    </TabPanels>
+                </Tabs>
+
+                {/* <br /><br /><br /><br /><br /> */}
+
                 <Grid
-            mt={10}
-            px={40}
-            columnGap={4}
-            rowGap={8}
-            gap={10}
-            // templateColumns={"repeat(5, 1fr)"}
-            templateColumns={{
-                sm: "1fr",
-                md: "1fr 1fr",
-                lg: "repeat(3, 1fr)",
-                xl: "repeat(4, 1fr)",
-                "2xl": "repeat(5, 1fr)",
-            }}
-        >
-            {isLoading ? (
-                <>
-                    <RoomSkeleton />
-                    <RoomSkeleton />
-                    <RoomSkeleton />
-                    <RoomSkeleton />
-                    <RoomSkeleton />
-                    <RoomSkeleton />
-                    <RoomSkeleton />
-                    <RoomSkeleton />
-                    <RoomSkeleton />
-                    <RoomSkeleton />
-                </>
-            ) : null}
-            {data?.map((room) => (
-                <Room
-                    pk={room.pk}
-                    imageUrl={
-                        room.photos[0] ? room.photos[0]?.file : "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"
-                    }
-                    name={room.name}
-                    rating={room.rating}
-                    city={room.city}
-                    country={room.country}
-                    price={room.price}
-                />
-            ))}
-        </Grid>
+                    mt={10}
+                    // px={40}
+                    columnGap={4}
+                    rowGap={8}
+                    gap={10}
+                    // templateColumns={"repeat(5, 1fr)"}
+                    templateColumns={{
+                        sm: "1fr",
+                        md: "1fr 1fr",
+                        lg: "repeat(3, 1fr)",
+                        xl: "repeat(4, 1fr)",
+                        "2xl": "repeat(5, 1fr)",
+                    }}
+                >
+                    {isLoading ? (
+                        <>
+                            <RoomSkeleton />
+                            <RoomSkeleton />
+                            <RoomSkeleton />
+                            <RoomSkeleton />
+                            <RoomSkeleton />
+                            <RoomSkeleton />
+                            <RoomSkeleton />
+                            <RoomSkeleton />
+                            <RoomSkeleton />
+                            <RoomSkeleton />
+                        </>
+                    ) : null}
+                    {data?.map((room) => (
+                        <Room
+                            pk={room.pk}
+                            imageUrl={
+                                room.photos[0] ? room.photos[0]?.file : "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"
+                            }
+                            name={room.name}
+                            rating={room.rating}
+                            city={room.city}
+                            country={room.country}
+                            price={room.price}
+                        />
+                    ))}
+                </Grid>
 
             </Box>
         </div>
