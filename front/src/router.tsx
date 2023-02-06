@@ -5,7 +5,7 @@ import Home from "./routes/Home";
 import NotFound from "./routes/NotFound";
 
 import RoomDetail from "./routes/RoomDetail";
-
+import UploadRoom from "./routes/UploadRoom";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +20,10 @@ const router = createBrowserRouter([
             {
                 path: "rooms/:roomPk",
                 element: <RoomDetail />,
+            },
+            {
+                path: "rooms/upload",
+                element: <UploadRoom />,
             },
             {
                 path: "/building_management",

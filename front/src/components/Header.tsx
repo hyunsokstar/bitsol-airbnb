@@ -34,7 +34,7 @@ export default function Header() {
     const logoColor = useColorModeValue("red.500", "red.200");
     const Icon = useColorModeValue(FaMoon, FaSun);
     const { userLoading, isLoggedIn, user } = useUser();
-    
+
     const queryClient = useQueryClient();
 
     const toast = useToast();
@@ -82,7 +82,6 @@ export default function Header() {
                 </Link> */}
 
                 <img src="https://www.scgs.co.kr/img/logo.png" alt="" />
-
             </Box>
             <HStack spacing={2}>
                 <HeadMenus />
@@ -105,7 +104,11 @@ export default function Header() {
                                 <Avatar name={user?.name} src={user?.avatar} size={"md"} />
                             </MenuButton>
                             <MenuList>
-                                {/* <MenuItem>Log Out</MenuItem> */}
+                                {user?.is_host ? (
+                                    <Link to="/rooms/upload">
+                                        <MenuItem>Upload room</MenuItem>
+                                    </Link>
+                                ) : null}
                                 <MenuItem onClick={onLogOut}>Log out</MenuItem>
                             </MenuList>
                         </Menu>
