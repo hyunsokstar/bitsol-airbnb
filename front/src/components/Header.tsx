@@ -23,12 +23,9 @@ import {
 } from "@chakra-ui/react";
 import useUser from "../lib/useUser";
 import { logOut } from "../api";
-<<<<<<< HEAD
-import HeadMenus from "./HeadMenus";
-=======
 import { useQueryClient } from "@tanstack/react-query";
-
->>>>>>> 7db8a95edab674c901a42d929375729dab94e8ae
+import HeadMenus from "./HeadMenus";
+// HeadMenus
 
 export default function Header() {
     const { isOpen: isLoginOpen, onClose: onLoginClose, onOpen: onLoginOpen } = useDisclosure();
@@ -88,10 +85,7 @@ export default function Header() {
 
             </Box>
             <HStack spacing={2}>
-
                 <HeadMenus />
-                
-
 
                 <IconButton onClick={toggleColorMode} variant={"ghost"} aria-label="Toggle dark mode" icon={<Icon />} />
 
