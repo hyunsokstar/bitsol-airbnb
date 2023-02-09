@@ -9,6 +9,7 @@ import { getRoom, getRoomReviews } from "../api";
 import { IReview, IRoomDetail } from "../types";
 import { FaStar } from "react-icons/fa";
 
+
 export default function RoomDetail() {
     const { roomPk } = useParams();
     const { isLoading, data } = useQuery<IRoomDetail>([`rooms`, roomPk], getRoom);

@@ -21,12 +21,23 @@ export interface IRoomOwner {
     username: string;
 }
 
+// 1122
 export interface IAmenity {
+    pk: number;
     name: string;
     description: string;
 }
 
+// 1122
+export interface ICategory {
+    pk: number;
+    name: string;
+    kind: string;
+}
+
+// 1122
 export interface IRoomDetail extends IRoomList {
+    id: number;
     created_at: string;
     updated_at: string;
     rooms: number;
@@ -37,10 +48,11 @@ export interface IRoomDetail extends IRoomList {
     kind: string;
     is_owner: boolean;
     is_liked: boolean;
-    category: {
-        name: string;
-        kind: string;
-    };
+    // category: {
+    //     name: string;
+    //     kind: string;
+    // };
+    category: ICategory;
     owner: IRoomOwner;
     amenities: IAmenity[];
 }
@@ -52,14 +64,14 @@ export interface IReview {
 }
 
 export interface IUser {
-  last_login: string;
-  username: string;
-  email: string;
-  date_joined: string;
-  avatar: string;
-  name: string;
-  is_host: boolean;
-  gender: string;
-  language: string;
-  currency: string;
+    last_login: string;
+    username: string;
+    email: string;
+    date_joined: string;
+    avatar: string;
+    name: string;
+    is_host: boolean;
+    gender: string;
+    language: string;
+    currency: string;
 }

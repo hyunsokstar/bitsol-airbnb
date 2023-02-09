@@ -57,7 +57,7 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
         // console.log(data);
         mutation.mutate({ username, password });
     };
-    console.log("errors : ", errors);
+    // console.log("errors : ", errors);
 
     return (
         <Modal onClose={onClose} isOpen={isOpen}>

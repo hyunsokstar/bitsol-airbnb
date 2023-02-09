@@ -132,7 +132,6 @@ class Rooms(APIView):
             return Response(serializer.errors)           
     
 class RoomDetail(APIView):
-    
     permission_classes = [IsAuthenticatedOrReadOnly]    
     
     def get_object(self, pk):
@@ -210,7 +209,6 @@ class RoomDetail(APIView):
             return Response(serializer.errors)
         
 class RoomReviews(APIView):
-    
     permission_classes = [IsAuthenticatedOrReadOnly]    
     
     def get_object(self, pk):
