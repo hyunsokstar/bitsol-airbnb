@@ -8,8 +8,9 @@ import RoomDetail from "./routes/RoomDetail";
 import UploadRoom from "./routes/UploadRoom";
 
 import ReactDraft from "./routes/ReactDraft";
+import SunEditorPage from "./routes/SunEditor";
+import LexicalEditorPage from "./routes/LexicalEditorPage";
 
-// ReactDraft
 
 const router = createBrowserRouter([
     {
@@ -36,6 +37,14 @@ const router = createBrowserRouter([
             {
                 path:"/test/react-draft",
                 element: <ReactDraft />
+            },
+            {
+                path:"/test/sun-editor",
+                element: <SunEditorPage />
+            },
+            {
+                path:"/test/lexical-editor",
+                element: <LexicalEditorPage />
             }
         ],
     },
