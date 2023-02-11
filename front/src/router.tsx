@@ -10,7 +10,7 @@ import UploadRoom from "./routes/UploadRoom";
 import ReactDraft from "./routes/ReactDraft";
 import SunEditorPage from "./routes/SunEditor";
 import LexicalEditorPage from "./routes/LexicalEditorPage";
-
+import TipTabPage from "./routes/TipTabPage";
 
 const router = createBrowserRouter([
     {
@@ -35,17 +35,21 @@ const router = createBrowserRouter([
                 element: <BuildingManagement />,
             },
             {
-                path:"/test/react-draft",
-                element: <ReactDraft />
+                path: "/test/react-draft",
+                element: <ReactDraft />,
             },
             {
-                path:"/test/sun-editor",
-                element: <SunEditorPage />
+                path: "/test/sun-editor",
+                element: <SunEditorPage />,
             },
             {
-                path:"/test/lexical-editor",
-                element: <LexicalEditorPage />
-            }
+                path: "/test/lexical-editor",
+                element: <LexicalEditorPage />,
+            },
+            {
+                path: "/test/tiptap-editor",
+                element: <TipTabPage />,
+            },
         ],
     },
 ]);
