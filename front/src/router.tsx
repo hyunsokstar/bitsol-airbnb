@@ -7,6 +7,10 @@ import NotFound from "./routes/NotFound";
 import RoomDetail from "./routes/RoomDetail";
 import UploadRoom from "./routes/UploadRoom";
 
+import ReactDraft from "./routes/ReactDraft";
+
+// ReactDraft
+
 const router = createBrowserRouter([
     {
         path: "/",
@@ -29,6 +33,10 @@ const router = createBrowserRouter([
                 path: "/building_management",
                 element: <BuildingManagement />,
             },
+            {
+                path:"/test/react-draft",
+                element: <ReactDraft />
+            }
         ],
     },
 ]);
