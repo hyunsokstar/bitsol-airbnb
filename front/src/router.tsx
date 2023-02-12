@@ -11,6 +11,7 @@ import ReactDraft from "./routes/ReactDraft";
 import SunEditorPage from "./routes/SunEditor";
 import LexicalEditorPage from "./routes/LexicalEditorPage";
 import TipTabPage from "./routes/TipTabPage";
+import TinyMcePage from "./routes/TinyMcePage";
 
 const router = createBrowserRouter([
     {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
             {
                 path: "/test/tiptap-editor",
                 element: <TipTabPage />,
+            },
+            {
+                path: "/test/tinymce-editor",
+                element: <TinyMcePage />,
             },
         ],
     },
